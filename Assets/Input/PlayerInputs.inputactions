@@ -1,5 +1,5 @@
 {
-    "name": "UserInputs",
+    "name": "PlayerInputs",
     "maps": [
         {
             "name": "Player",
@@ -9,7 +9,7 @@
                     "name": "Move",
                     "type": "Value",
                     "id": "17335734-6941-43dc-93fd-f9d2d99b9a64",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -55,7 +55,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Up and Down",
+                    "name": "Left and Right",
                     "id": "00ca640b-d935-4593-8157-c05846ea39b3",
                     "path": "Dpad",
                     "interactions": "",
