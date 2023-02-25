@@ -1,6 +1,3 @@
-using System.IO.Enumeration;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Debug = UnityEngine.Debug;
@@ -9,14 +6,19 @@ using Debug = UnityEngine.Debug;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private bool isJumping;
+    private bool isMoving;
+    private int jumps;
     private float movementX;
     private float movementY;
 
     // Start is called before the first frame update, or when the game is launched and loaded
-    void Start()
+    public void Start()
     {
         // Assign the player character Rigidbody as a variable to be referenced when the Vector 2 attributes of the Rigidbody2D are retrieved
         rb = GetComponent<Rigidbody2D>();
+        float movementX = rb.position.x;
+        float movementY = rb.position.y;
         Debug.Log("Player Controller Started");
     }
 
@@ -24,16 +26,16 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputValue movementValue)
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
-        Debug.Log(movementVector);
+        Debug.Log("Moving");
         movementX = movementVector.x;
         movementY = movementVector.y;
-        Debug.Log("Moving");
-    }
-
-    
-    private void Update() 
-    {
-        Vector2 movement = new Vector2(movementX, movementY); // The Vector3 constructor was using the wrong order of arguments
+        Vector2 movement = new Vector2(movementX, movementY);
+        Debug.Log(movement);
         rb.AddForce(movement);
     }
+
+    // public void OnMove(InputValue movementValue)
+    // {
+    //     if
+    // }
 }
