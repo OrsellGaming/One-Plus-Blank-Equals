@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Debug = UnityEngine.Debug;
 
 // The main PlayerController for receiving inputs from the user and applying it to the player
 public class PlayerController : MonoBehaviour
