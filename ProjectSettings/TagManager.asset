@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - UI Camera
   - Ground
+  - PlayerCamera
+  - UICamera
   layers:
   - Default
   - TransparentFX

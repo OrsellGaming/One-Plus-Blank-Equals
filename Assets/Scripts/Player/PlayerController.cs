@@ -5,20 +5,22 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private bool isJumping;
-    private bool isMoving;
-    private int jumps;
+    private bool isJumping = false;
+    private bool isMoving = false;
+    private int jumps = 0;
     private float movementX;
     private float movementY;
+
+    public float jumpStrength = 10;
+    public float speed = 8;
+    public int jumpLimit = 2;
 
     // Start is called before the first frame update, or when the game is launched and loaded
     public void Start()
     {
         // Assign the player character Rigidbody as a variable to be referenced when the Vector 2 attributes of the Rigidbody2D are retrieved
         rb = GetComponent<Rigidbody2D>();
-        float movementX = rb.position.x;
-        float movementY = rb.position.y;
-        Debug.Log("Player Controller Started");
+        rb.
     }
 
     // Called when a input is received in Unity by a keyboard or controller

@@ -73,3 +73,8 @@ crashlytics-build.properties
 
 # Compiled Unity Game
 /CompiledGame
+
+# Imported Assets
+/Assets/UnityTechnologies
+/Assets/MagicParticlesLite
+/Assets/PowerUp
