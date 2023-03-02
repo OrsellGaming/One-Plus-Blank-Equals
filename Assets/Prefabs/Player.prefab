@@ -373,9 +373,9 @@ GameObject:
   - component: {fileID: 6965161695392335893}
   - component: {fileID: 6965161695392335890}
   - component: {fileID: 6965161695392335894}
-  - component: {fileID: 6965161695392335888}
   - component: {fileID: 6965161695392335899}
   - component: {fileID: 6965161695392335896}
+  - component: {fileID: 1319724095}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: b8789bfe4e7ccf145bc206f9a139d45d, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -526,32 +526,49 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: c5d2a3c2d487aa34a91d42792e6b1966, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1319724095}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
     m_ActionId: 17335734-6941-43dc-93fd-f9d2d99b9a64
     m_ActionName: Player/Move[/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: b66bb95c-8191-4211-91db-c2a3d44ac85f
-    m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
+    m_ActionName: Player/Look[/Mouse/delta,/Touchscreen/delta,/Simulated Touchscreen/delta]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 07e73c22-fc9d-4828-8234-9e7bbd6bb802
-    m_ActionName: Player/Fire[/Mouse/leftButton,/Keyboard/s,/Keyboard/downArrow]
+    m_ActionName: Player/Fire[/Mouse/leftButton,/Touchscreen/primaryTouch/tap,/Simulated
+      Touchscreen/primaryTouch/tap,/Keyboard/s,/Keyboard/downArrow]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1319724095}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 70086cf5-5d65-4624-9e27-007294f3f983
     m_ActionName: Player/Jump[/Keyboard/space,/Keyboard/upArrow,/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b9c66205-748c-47b0-9e4f-cace3af6d468
+    m_ActionName: Player/Quit[/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 54b86bae-1b56-45f0-bd70-b93a1a247bec
@@ -567,11 +584,20 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 776986e0-ff00-4772-bbc8-bd45c5a68db2
-    m_ActionName: UI/Point[/Mouse/position,/Pen/position]
+    m_ActionName: UI/Point[/Mouse/position,/Touchscreen/touch0/position,/Touchscreen/touch1/position,/Touchscreen/touch2/position,/Touchscreen/touch3/position,/Touchscreen/touch4/position,/Touchscreen/touch5/position,/Touchscreen/touch6/position,/Touchscreen/touch7/position,/Touchscreen/touch8/position,/Touchscreen/touch9/position,/Simulated
+      Touchscreen/touch0/position,/Simulated Touchscreen/touch1/position,/Simulated
+      Touchscreen/touch2/position,/Simulated Touchscreen/touch3/position,/Simulated
+      Touchscreen/touch4/position,/Simulated Touchscreen/touch5/position,/Simulated
+      Touchscreen/touch6/position,/Simulated Touchscreen/touch7/position,/Simulated
+      Touchscreen/touch8/position,/Simulated Touchscreen/touch9/position]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 0d17d8b1-245b-409c-ab54-2a04e370c133
-    m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
+    m_ActionName: UI/Click[/Mouse/leftButton,/Touchscreen/touch0/press,/Touchscreen/touch1/press,/Touchscreen/touch2/press,/Touchscreen/touch3/press,/Touchscreen/touch4/press,/Touchscreen/touch5/press,/Touchscreen/touch6/press,/Touchscreen/touch7/press,/Touchscreen/touch8/press,/Touchscreen/touch9/press,/Simulated
+      Touchscreen/touch0/press,/Simulated Touchscreen/touch1/press,/Simulated Touchscreen/touch2/press,/Simulated
+      Touchscreen/touch3/press,/Simulated Touchscreen/touch4/press,/Simulated Touchscreen/touch5/press,/Simulated
+      Touchscreen/touch6/press,/Simulated Touchscreen/touch7/press,/Simulated Touchscreen/touch8/press,/Simulated
+      Touchscreen/touch9/press]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: db9b2515-0f09-4213-a377-bcf322781813
@@ -597,24 +623,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &6965161695392335888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795878767432306336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"jumpStrength","value":{"$content":10.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"speed","value":{"$content":8.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"jumpLimit","value":{"$content":2,"$type":"System.Int32"},"typeHandle":{"Identification":"System.Int32,
-      mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
 --- !u!198 &6965161695392335899
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5394,3 +5402,20 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &1319724095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795878767432306336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d2a3c2d487aa34a91d42792e6b1966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartLocation: {fileID: 0}
+  Ground: {fileID: 0}
+  jumpStrength: 100
+  speed: 800
+  jumpLimit: 2
