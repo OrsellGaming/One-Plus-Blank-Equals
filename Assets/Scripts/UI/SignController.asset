@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: SignController
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"SignController","summary":"Functionality
+      for the interactable signs","pan":{"x":-183.5595,"y":17.91905},"zoom":0.9,"elements":[{"coroutine":false,"defaultValues":{},"position":{"x":-219.0,"y":-193.0},"guid":"e377562f-9167-465e-b456-0d522033b906","$version":"A","$type":"Unity.VisualScripting.Start","$id":"9"},{"coroutine":false,"defaultValues":{},"position":{"x":-204.0,"y":60.0},"guid":"eb5ce643-aebd-4265-8cfd-16781dc4beb4","$version":"A","$type":"Unity.VisualScripting.Update"},{"coroutine":false,"defaultValues":{"target":null},"position":{"x":3.0,"y":-56.0},"guid":"6f44675f-f317-44d3-ac9d-0f898fd167af","$version":"A","$type":"Unity.VisualScripting.OnTriggerEnter2D"},{"chainable":false,"member":{"name":"enabled","parameterTypes":null,"targetType":"TMPro.TextMeshPro","targetTypeName":"TMPro.TextMeshPro","$version":"A"},"defaultValues":{"target":null,"input":{"$content":false,"$type":"System.Boolean"}},"position":{"x":-51.0,"y":-196.0},"guid":"90305d80-901e-49eb-b4e0-58dd803d8e7c","$version":"A","$type":"Unity.VisualScripting.SetMember","$id":"15"},{"type":"TMPro.TextMeshProUGUI","value":null,"defaultValues":{},"position":{"x":-419.0,"y":30.0},"guid":"9e097bf0-6153-484b-a62f-07741ce10dc9","$version":"A","$type":"Unity.VisualScripting.Literal"},{"sourceUnit":{"$ref":"9"},"sourceKey":"trigger","destinationUnit":{"$ref":"15"},"destinationKey":"assign","guid":"249a997b-37bc-411a-925b-505ff349b3fe","$type":"Unity.VisualScripting.ControlConnection"}],"$version":"A"}}'
+    _objectReferences: []

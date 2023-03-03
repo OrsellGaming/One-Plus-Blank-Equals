@@ -7,10 +7,10 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public GameObject StartLocation;
-    public GameObject Ground;
     public float jumpStrength = 1000;
     public float speed = 800;
     public int jumpLimit = 2;
+    public float deathVoid = -75;
 
     private Rigidbody2D rb;
     private Vector2 startLocationPosition;
@@ -66,8 +66,9 @@ public class PlayerController : MonoBehaviour
         // Assign the player character Rigidbody as a variable to be referenced when the Vector 2 attributes of the Rigidbody2D are retrieved
         rb = GetComponent<Rigidbody2D>();
         Vector2 startLocationPosition = new Vector2(StartLocation.transform.position.x, StartLocation.transform.position.y);
-        rb.velocity = new Vector2(0.0f, 0.0f);
+        Debug.Log(startLocationPosition);
         rb.MovePosition(startLocationPosition);
+        rb.velocity = new Vector2(0.0f, 0.0f);
         rb.Sleep();
     }
 
@@ -77,7 +78,8 @@ public class PlayerController : MonoBehaviour
     /// <param name="collision"></param>
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == Ground.tag)
+        
+        if (collision.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
             jumps = 0;
@@ -92,22 +94,19 @@ public class PlayerController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         Vector2 movementVector = context.ReadValue<Vector2>();
-        movementX = movementVector.x;
-        Debug.Log("OnMove Called");
-        if (context.started)
+        if (movementVector.x > 0 || movementVector.x < 0)
         {
             Debug.Log("MOVING");
-            movementX = movementX * speed;
-            Debug.Log(movementX);
-            Vector2 moveMovement = new Vector2(movementX, 0.0f);
-            rb.AddForce(moveMovement);
+            movementX = movementVector.x * speed;
+            Debug.Log($"movementX: {movementX}");
+            rb.AddForce(new Vector2(movementX, 0.0f));
             isMoving = true;
         }
         
-        if (context.canceled)
+        if (movementVector.x == 0)
         {
             Debug.Log("STOPPED MOVING");
-            movementX = movementX * 0;
+            //movementX = movementVector.x * 0;
             //Vector2 movement = new Vector2(movementX, 0.0f);
             if (isGrounded)
             {   
@@ -122,10 +121,10 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// Called when the assigned Jump control is pressed
     /// </summary>
-    /// <param name="movementValue"></param>
+    /// <param name="context"></param>
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if (context.ReadValueAsButton())
         {
             Debug.Log(jumps);
             Debug.Log(jumpLimit);
@@ -146,9 +145,33 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
+    /// Function to handle respawning when hitting the deathVoid limit
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator Respawn()
+    {   
+        rb.velocity = new Vector2(0.0f, 0.0f);
+        Debug.Log(startLocationPosition);
+        rb.MovePosition(startLocationPosition);
+        rb.Sleep();
+        yield return new WaitForSeconds(1);
+        rb.velocity = new Vector2(0.0f, 2.0f);
+    }
+
+    /// <summary>
     /// Update is called every game frame
     /// </summary>
-    private void Update() {
-        
+    private void Update()
+    {
+
+    }
+
+    private void OnTriggerExit2D(Collider2D trigger)
+    {
+        if (trigger.gameObject.name == "DeathVoid")
+        {
+            Debug.Log("Hit Death Void");
+            StartCoroutine(Respawn());
+        }
     }
 }
