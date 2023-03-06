@@ -362,7 +362,6 @@ GameObject:
   - component: {fileID: 6965161695392335899}
   - component: {fileID: 6965161695392335896}
   - component: {fileID: 1319724095}
-  - component: {fileID: 1319724096}
   - component: {fileID: 1319724097}
   m_Layer: 0
   m_Name: Player
@@ -5407,28 +5406,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"speed","value":{"$content":30.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[{"name":"speed","value":{"$content":25.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"jumpStrength","value":{"$content":10.0,"$type":"System.Single"},"typeHandle":{"Identification":"System.Single,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"},{"name":"jumpLimit","value":{"$content":2,"$type":"System.Int32"},"typeHandle":{"Identification":"System.Int32,
       mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089","$version":"A"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences: []
---- !u!114 &1319724096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795878767432306336}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5d2a3c2d487aa34a91d42792e6b1966, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StartLocation: {fileID: 0}
-  jumpStrength: 1000
-  speed: 800
-  jumpLimit: 2
-  deathVoid: -75
 --- !u!114 &1319724097
 MonoBehaviour:
   m_ObjectHideFlags: 0
