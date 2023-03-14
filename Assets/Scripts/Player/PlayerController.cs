@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 startLocationPosition;
     private PlayerInput playerInput;
     //private PlayerControls playerControls;
-    private bool isJumping = false;
-    private bool isMoving = false;
+    //private bool isJumping = false;
+    //private bool isMoving = false;
     private bool isGrounded = true;
     private int jumps = 0;
     private float movementX;
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isJumping = false;
+            //isJumping = false;
             jumps = 0;
             isGrounded = true;
         }
@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
             movementX = movementVector.x * speed;
             Debug.Log($"movementX: {movementX}");
             rb.AddForce(new Vector2(movementX, 0.0f));
-            isMoving = true;
+            //isMoving = true;
         }
         
         if (movementVector.x == 0)
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
                 Vector2 vel = rb.velocity;
                 vel.x = 0.0f;
                 rb.velocity = vel;
-                isMoving = false;
+                //isMoving = false;
             }
         }
     }
